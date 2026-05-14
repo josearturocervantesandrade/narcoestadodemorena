@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Narcopolítica en México: Señalamientos y Acusaciones contra Funcionarios de Morena</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0d0b;
+    --paper: #f5f0e8;
+    --aged: #e8e0cc;
+    --sepia: #c8b89a;
+    --rust: #8b2020;
+    --gold: #b8860b;
+    --dark-red: #6b0f0f;
+    --mid: #4a3728;
+    --light-mid: #7a6555;
+    --rule: #2a1f1a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  .cover {
+    background: var(--ink);
+    padding: 60px 40px 40px;
+    text-align: center;
+    border-bottom: 3px solid var(--rust);
+  }
+
+  .cover-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--sepia);
+    margin-bottom: 24px;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 900;
+    color: var(--paper);
+    line-height: 1.05;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+
+  .cover-title span {
+    color: var(--rust);
+  }
+
+  .cover-subtitle {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--sepia);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+
+  .cover-meta {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-mid);
+    border-top: 1px solid var(--light-mid);
+    padding-top: 8px;
+  }
+
+  .disclaimer-banner {
+    background: #1a0a0a;
+    border: 1px solid var(--rust);
+    padding: 16px 40px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--sepia);
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+
+  .disclaimer-banner strong {
+    color: var(--rust);
+    text-transform: uppercase;
+  }
+
+  .newspaper {
+    background: var(--paper);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .section-rule {
+    background: var(--ink);
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-rule span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--paper);
+    white-space: nowrap;
+  }
+
+  .section-rule::before, .section-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--sepia);
+    opacity: 0.4;
+  }
+
+  .article {
+    padding: 40px 40px 0;
+  }
+
+  .lede {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--mid);
+    font-style: italic;
+    border-left: 4px solid var(--rust);
+    padding: 12px 20px;
+    background: var(--aged);
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+
+  .body-text {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #2a1f1a;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--dark-red);
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--sepia);
+    letter-spacing: -0.3px;
+  }
+
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--rule);
+    margin: 28px 0 12px;
+    font-style: italic;
+  }
+
+  .case-card {
+    background: white;
+    border: 1px solid var(--sepia);
+    border-left: 5px solid var(--rust);
+    padding: 24px;
+    margin: 28px 0;
+    box-shadow: 3px 3px 0 var(--aged);
+  }
+
+  .case-card .case-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .case-card .case-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-red);
+  }
+
+  .case-card .case-role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-mid);
+    margin-top: 2px;
+  }
+
+  .status-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+
+  .status-indicted {
+    background: var(--rust);
+    color: white;
+  }
+
+  .status-investigated {
+    background: #5a3a00;
+    color: #f5c060;
+  }
+
+  .status-alleged {
+    background: var(--aged);
+    color: var(--mid);
+    border: 1px solid var(--sepia);
+  }
+
+  .case-card .case-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--mid);
+  }
+
+  .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--dark-red);
+    border-top: 3px double var(--rust);
+    border-bottom: 3px double var(--rust);
+    padding: 24px 32px;
+    margin: 36px 0;
+    text-align: center;
+    line-height: 1.45;
+    background: var(--aged);
+  }
+
+  .pull-quote cite {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-mid);
+    margin-top: 12px;
+  }
+
+  .timeline {
+    margin: 32px 0;
+    position: relative;
+    padding-left: 24px;
+    border-left: 2px solid var(--sepia);
+  }
+
+  .timeline-event {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--rust);
+    border: 2px solid var(--paper);
+    box-shadow: 0 0 0 2px var(--rust);
+  }
+
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .timeline-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--mid);
+  }
+
+  .response-box {
+    background: #f0ebe0;
+    border: 1px dashed var(--sepia);
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+
+  .response-box .response-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-mid);
+    margin-bottom: 10px;
+  }
+
+  .response-box p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--mid);
+    font-style: italic;
+  }
+
+  .infographic {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 32px 40px;
+    margin: 36px 0;
+  }
+
+  .infographic h3 {
+    color: var(--sepia);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-style: normal;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 12px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+
+  .stat-box {
+    border: 1px solid #333;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--rust);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--sepia);
+    line-height: 1.4;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--sepia);
+    margin: 36px 0;
+  }
+
+  .conclusion-box {
+    background: var(--aged);
+    border: 2px solid var(--rule);
+    padding: 28px 32px;
+    margin: 36px 0;
+  }
+
+  .conclusion-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark-red);
+    font-style: normal;
+    margin-bottom: 14px;
+  }
+
+  .footer {
+    background: var(--ink);
+    color: var(--sepia);
+    padding: 32px 40px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+  }
+
+  .footer .footer-rule {
+    border-color: #333;
+    margin-bottom: 20px;
+  }
+
+  .sources-section {
+    padding: 32px 40px 40px;
+    background: var(--paper);
+  }
+
+  .sources-section h2 {
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  .sources-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sources-list li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--light-mid);
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--sepia);
+    letter-spacing: 0.3px;
+  }
+
+  .sources-list li::before {
+    content: '▸ ';
+    color: var(--rust);
+  }
+
+  .tag {
+    display: inline-block;
+    background: var(--aged);
+    border: 1px solid var(--sepia);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--mid);
+    padding: 2px 8px;
+    margin: 2px 2px 2px 0;
+    vertical-align: middle;
+  }
+
+  strong { color: var(--dark-red); }
+
+  @media print {
+    body { background: white; }
+    .cover { background: var(--ink) !important; -webkit-print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Investigación Especial · Mayo 2026 · México</div>
+  <h1 class="cover-title">Narcopolítica en México:<br><span>Señalamientos y Acusaciones</span><br>contra Funcionarios de Morena</h1>
+  <p class="cover-subtitle">Un análisis de los casos documentados, investigaciones en curso y señalamientos formales de presuntos vínculos entre integrantes del partido gobernante y el crimen organizado.</p>
+  <div style="margin-bottom: 20px;">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #7a6555; margin-bottom: 4px;">Elaborado por</div>
+    <div style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #f5f0e8; letter-spacing: 0.5px;">Jose Arturo Cervantes Andrade</div>
+  </div>
+  <div class="cover-meta">
+    <div class="meta-item">Informe de análisis político</div>
+    <div class="meta-item">Fuentes: DOJ · DEA · Reuters · NY Times · Proceso</div>
+    <div class="meta-item">Actualizado al 13 de mayo de 2026</div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-banner">
+  <strong>⚠ Nota editorial importante:</strong> Este informe documenta acusaciones formales, señalamientos de autoridades e investigaciones periodísticas. Las acusaciones <em>no son sentencias condenatorias</em>. Todos los señalados conservan la presunción de inocencia. Se presentan también las negaciones y posiciones de los involucrados.
+</div>
+
+<!-- NEWSPAPER BODY -->
+<div class="newspaper">
+
+  <!-- INTRO -->
+  <div class="article">
+    <p class="lede">En abril de 2026, el Departamento de Justicia de Estados Unidos emitió la primera acusación formal contra un gobernador mexicano en funciones por presuntos vínculos con el narcotráfico. El caso abrió una crisis política que amenaza con escalar y revelar otros expedientes contra figuras clave del partido Morena.</p>
+
+    <p class="body-text">La acumulación de señalamientos contra funcionarios del partido Movimiento Regeneración Nacional (Morena) y del gobierno de la Cuarta Transformación ha alcanzado en 2025-2026 un punto de inflexión. Lo que antes se presentaba como casos aislados o "guerra sucia" de la oposición, ha tomado una dimensión nueva con la intervención directa de las autoridades judiciales y de inteligencia de Estados Unidos.</p>
+
+    <p class="body-text">El presente informe compila y analiza los casos más documentados, distinguiendo entre acusaciones formales, señalamientos de inteligencia, investigaciones periodísticas y declaraciones políticas. El objetivo es ofrecer una visión panorámica, rigurosa y equilibrada del fenómeno que analistas y medios especializados han denominado <strong>"narcopolítica"</strong>.</p>
+
+    <div class="infographic">
+      <h3>Panorama General · Cifras clave</h3>
+      <div class="grid-2">
+        <div class="stat-box">
+          <div class="stat-num">11</div>
+          <div class="stat-label">Funcionarios acusados formalmente por el DOJ de EUA (caso Sinaloa, abril 2026)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">23</div>
+          <div class="stat-label">Estados gobernados por Morena al momento de los señalamientos (2025)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Acusaciones adicionales del DOJ preparadas, según periodista Riva Palacio (mayo 2026)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">1ª</div>
+          <div class="stat-label">Vez que un gobernador mexicano en funciones es imputado formalmente por EUA por narcotráfico</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 1 -->
+  <div class="section-rule"><span>Caso Central</span></div>
+
+  <div class="article">
+    <h2>El Caso Rocha Moya: La Primera Acusación Formal</h2>
+
+    <div class="case-card">
+      <div class="case-header">
+        <div>
+          <div class="case-name">Rubén Rocha Moya</div>
+          <div class="case-role">Gobernador con licencia · Sinaloa · Morena</div>
+        </div>
+        <span class="status-badge status-indicted">Acusado formalmente — DOJ</span>
+      </div>
+      <div class="case-body">
+        El 29 de abril de 2026, la Fiscalía del Distrito Sur de Nueva York, en conjunto con la DEA, emitió cargos formales contra Rocha Moya y otros diez funcionarios y exfuncionarios del estado de Sinaloa. Es la primera acusación de este tipo contra un gobernador mexicano en funciones. Los fiscales alegan que Rocha Moya se reunió con los hijos del "Chapo" Guzmán ("Los Chapitos") antes de las elecciones de 2021, prometiéndoles designar funcionarios favorables a sus operaciones. La acusación también señala que el aparato del estado fue utilizado para proteger operaciones del Cártel de Sinaloa y que integrantes de dicho cártel substrajeron urnas e intimidaron a rivales políticos para favorecer su triunfo electoral. <br><br>
+        <strong>Rocha Moya ha negado categóricamente todas las acusaciones.</strong> La presidenta Claudia Sheinbaum ha sostenido que no existen pruebas suficientes presentadas ante autoridades mexicanas.
+      </div>
+    </div>
+
+    <h3>Cronología del Caso Rocha Moya</h3>
+    <div class="timeline">
+      <div class="timeline-event">
+        <div class="timeline-date">2021 — Proceso electoral</div>
+        <div class="timeline-text">El periodista Salvador García Soto publica que Rocha Moya confesó haberse reunido con cárteles para solicitar su apoyo para gobernar Sinaloa. El gobernador electo nunca desmintió la versión de manera categórica.</div>
+      </div>
+      <div class="timeline-event">
+        <div class="timeline-date">Julio 2024 — Captura del "Mayo" Zambada</div>
+        <div class="timeline-text">Ismael "El Mayo" Zambada, cofundador del Cártel de Sinaloa, es detenido en territorio estadounidense. En una carta posterior asegura que acudía a una reunión convocada por intermediarios de Rocha Moya para resolver un conflicto político, y que fue engañado y trasladado por la fuerza a EUA.</div>
+      </div>
+      <div class="timeline-event">
+        <div class="timeline-date">Agosto 2024 — 29 gobernadores morenistas respaldan a Rocha</div>
+        <div class="timeline-text">Veintiún gobernadores de Morena firman comunicado público defendiendo a Rocha Moya y negando sus presuntos vínculos con el crimen.</div>
+      </div>
+      <div class="timeline-event">
+        <div class="timeline-date">Octubre 2024 — Documentos Sedena / Guacamaya</div>
+        <div class="timeline-text">Documentos de inteligencia militar filtrados señalan que Rocha Moya tenía comunicación con la facción de "Los Chapitos" y que la Sedena vigilaba a su hijo como presunto intermediario.</div>
+      </div>
+      <div class="timeline-event">
+        <div class="timeline-date">29 Abril 2026 — Acusación formal del DOJ</div>
+        <div class="timeline-text">El Departamento de Justicia de EUA emite cargos formales por narcotráfico, conspiración con el Cártel de Sinaloa, recepción de sobornos y facilitación del tráfico de drogas hacia territorio estadounidense. También son acusados el senador Enrique Inzunza Cázarez y el alcalde de Culiacán, Juan de Dios Gámez.</div>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      "Yo fui y hablé con ellos, los conozco porque soy de Badiraguato. Y yo fui a pedirles su apoyo. Quien te diga que quiere gobernar Sinaloa y no tiene el visto bueno de ellos, te miente."
+      <cite>— Rubén Rocha Moya, según versión del periodista Salvador García Soto (2021)</cite>
+    </div>
+
+    <div class="response-box">
+      <div class="response-label">Posición oficial del gobierno mexicano</div>
+      <p>La presidenta Claudia Sheinbaum señaló que el caso corresponde a la FGR y que, de haber pruebas suficientes presentadas por autoridades estadounidenses, se procedería conforme a la ley. El titular de la SSPC, Omar García Harfuch, aseguró que el Gabinete de Seguridad no detectó conductas ilícitas de Rocha Moya en sus funciones de gobernador.</p>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <div class="section-rule"><span>Otros Casos Documentados</span></div>
+
+  <div class="article">
+    <h2>El Mapa de Señalamientos: Estado por Estado</h2>
+
+    <p class="body-text">El caso Rocha Moya no es aislado. Investigaciones periodísticas, documentos de inteligencia filtrados, retiro de visas estadounidenses y declaraciones de autoridades de EUA configuran un patrón de señalamientos que alcanza a gobernadores y figuras de alto perfil de Morena en múltiples entidades.</p>
+
+    <div class="case-card">
+      <div class="case-header">
+        <div>
+          <div class="case-name">Marina del Pilar Ávila Olmeda</div>
+          <div class="case-role">Gobernadora · Baja California · Morena</div>
+        </div>
+        <span class="status-badge status-investigated">Bajo investigación EUA</span>
+      </div>
+      <div class="case-body">
+        En mayo de 2025, el gobierno de EUA revocó la visa de turista de la gobernadora y de su entonces esposo, Carlos Torres, coordinador honorario de Proyectos Estratégicos en Tijuana. La gobernadora lo calificó como una "decisión administrativa". Posteriormente, la FGR inició investigación contra Torres por presuntos cargos de narcotráfico, tráfico de armas y lavado de dinero. El periodista Luis Chaparro publicó que los vínculos señalados son con "Los Rusos", brazo del Cártel de Sinaloa. Según el periodista Raymundo Riva Palacio, el nombre de la gobernadora ha sido discutido en reuniones bilaterales de seguridad y se ha planteado incluso una posible licencia al cargo. Torres ha sido denunciado anónimamente ante la FGR señalando que presuntamente recibía 150 mil dólares mensuales de Pedro Ariel Mendívil García, exsecretario de seguridad de Mexicali.<br><br>
+        <strong>La gobernadora ha negado cualquier vínculo con el crimen organizado.</strong>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-header">
+        <div>
+          <div class="case-name">Adán Augusto López Hernández</div>
+          <div class="case-role">Senador · Ex Secretario de Gobernación · Morena</div>
+        </div>
+        <span class="status-badge status-investigated">Señalado por EUA</span>
+      </div>
+      <div class="case-body">
+        Adán Augusto López enfrenta señalamientos vinculados a su periodo como gobernador de Tabasco (2019-2022), donde designó como Secretario de Seguridad a Hernán Bermúdez Requena. Documentos de la Sedena filtrados por Guacamaya Leaks identifican a Bermúdez como líder del grupo criminal "La Barredora", organización ligada a narcotráfico, huachicol, extorsión y tráfico de migrantes en Tabasco, Veracruz y Chiapas. Una investigación del medio N+ Focus reveló que López Hernández recibió 79 millones de pesos de empresas privadas durante su gobierno. Más recientemente, el periodista Jesús Lemus señala que autoridades estadounidenses preparan acciones judiciales contra él por presuntos nexos con una red de huachicol fiscal y crimen organizado, ligados a declaraciones del excontralmirante Fernando Farías Laguna. En mayo de 2026, renunció a la coordinación de Morena en el Senado, aunque Sheinbaum dijo que fue una decisión personal.<br><br>
+        <strong>López Hernández no ha emitido respuesta pública detallada a los señalamientos.</strong>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-header">
+        <div>
+          <div class="case-name">Américo Villarreal Anaya</div>
+          <div class="case-role">Gobernador · Tamaulipas · Morena</div>
+        </div>
+        <span class="status-badge status-alleged">Señalado — sin acusación formal</span>
+      </div>
+      <div class="case-body">
+        El gobernador de Tamaulipas figura entre los funcionarios mencionados por el Secretario de Estado Marco Rubio en reuniones con la presidenta Sheinbaum como personas de interés para el Departamento de Justicia. Es señalado por presunto financiamiento de grupos criminales para su campaña. Según el periodista Riva Palacio, su nombre forma parte de "la primera lista para acciones prontas" del DOJ. Las autoridades electorales del estado documentaron hechos relacionados con movilización política presuntamente favorecida por grupos criminales durante el proceso electoral que resultó en su elección.<br><br>
+        <strong>El gobernador ha negado los señalamientos. No existe acusación formal.</strong>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-header">
+        <div>
+          <div class="case-name">Alfonso Durazo Montaño</div>
+          <div class="case-role">Gobernador · Sonora · Morena</div>
+        </div>
+        <span class="status-badge status-alleged">Señalado por informes de inteligencia EUA</span>
+      </div>
+      <div class="case-body">
+        El gobernador de Sonora aparece citado en informes de inteligencia estadounidense como un objetivo de investigación por presunta operación de cárteles en su entidad. El Secretario Marco Rubio habría mencionado su nombre en encuentros bilaterales sobre seguridad. No existen cargos formales presentados en su contra.<br><br>
+        <strong>Durazo ha rechazado los señalamientos.</strong>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-header">
+        <div>
+          <div class="case-name">Enrique Inzunza Cázarez</div>
+          <div class="case-role">Senador · Sinaloa · Morena</div>
+        </div>
+        <span class="status-badge status-indicted">Acusado formalmente — DOJ</span>
+      </div>
+      <div class="case-body">
+        Fue incluido en la acusación del 29 de abril de 2026 junto con Rocha Moya. No se presentó a sesiones del Senado tras darse a conocer la acusación, señalando que no quería "prestarse al circo". Originario de Badiraguato, el mismo municipio serrano de Sinaloa que el propio Rocha Moya y que Joaquín "El Chapo" Guzmán.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 3 -->
+  <div class="section-rule"><span>Contexto y Antecedentes</span></div>
+
+  <div class="article">
+    <h2>El Entorno Institucional: ¿Por qué ahora?</h2>
+
+    <p class="body-text">El escalonamiento de señalamientos no es un fenómeno nuevo, pero sí se ha acelerado en el periodo 2025-2026 por varios factores convergentes.</p>
+
+    <h3>Los Testigos Cooperantes del Cártel de Sinaloa</h3>
+    <p class="body-text">La captura en julio de 2024 del "Mayo" Zambada en territorio estadounidense, sumada a la detención previa de Ovidio Guzmán ("El Ratón") en 2023, convirtieron a las cúpulas del Cártel de Sinaloa en potenciales testigos colaboradores ante la justicia de EUA. El Fiscal General interino Todd Blanche anticipó que nuevas acusaciones podrían derivarse de revelaciones hechas por estos capos transferidos a EUA. La DEA, bajo la dirección de Terry Cole, advirtió tras la acusación de Rocha Moya que ello era "solo el inicio" de la lucha contra los políticos mexicanos que cooperen con los cárteles.</p>
+
+    <h3>La Presión de la Administración Trump</h3>
+    <p class="body-text">Desde el regreso de Donald Trump a la Casa Blanca en enero de 2025, la administración estadounidense ha intensificado la presión sobre el gobierno mexicano en materia de narcopolítica. La Casa Blanca emitió un comunicado en febrero de 2025 acusando al Gobierno de México de mantener asociaciones con el narcotráfico. El Secretario Marco Rubio habría exigido en al menos tres ocasiones al gobierno de Sheinbaum acciones concretas contra políticos de Morena señalados, bajo amenaza de nuevas medidas arancelarias. Según el periodista Riva Palacio, están listas otras cinco acusaciones en la Corte Sur de Manhattan, cuya activación depende de si México comienza a actuar internamente contra los políticos señalados.</p>
+
+    <h3>El "Grupo Tabasco" y la Estructura Interna</h3>
+    <p class="body-text">Más allá de los casos individuales, analistas señalan la relevancia del llamado "Grupo Tabasco", red política encabezada por Adán Augusto López, que ha sido una de las corrientes más influyentes dentro de Morena. Los señalamientos hacia este grupo —que también alcanzan a la exdirectora del ISSSTE y exsecretaria de Gobernación Luisa María Alcalde— plantean interrogantes sobre la profundidad de la infiltración del crimen organizado en la cúpula del partido.</p>
+
+    <div class="pull-quote">
+      "No cabe duda de que los narcotraficantes y altos funcionarios del Gobierno mexicano han estado involucrados durante años, pero ahora de repente le estamos prestando atención a esto."
+      <cite>— Terry Cole, Director de la DEA (Mayo 2026, ante el Senado estadounidense)</cite>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 4 -->
+  <div class="section-rule"><span>Perspectivas en Conflicto</span></div>
+
+  <div class="article">
+    <h2>Las Voces del Debate</h2>
+
+    <p class="body-text">El fenómeno de la narcopolítica en México genera lecturas radicalmente distintas según el actor político. A continuación se presentan las posiciones principales, con sus argumentos centrales.</p>
+
+    <h3>La posición del gobierno de Sheinbaum</h3>
+    <div class="response-box">
+      <div class="response-label">Gobierno Federal — Posición oficial</div>
+      <p>La presidenta Claudia Sheinbaum ha sostenido que las acusaciones de EUA carecen de pruebas suficientes presentadas formalmente ante autoridades mexicanas. Exige el cumplimiento de los tratados de cooperación jurídica internacional antes de actuar. El Gabinete de Seguridad ha defendido a los funcionarios señalados, argumentando que no se han detectado conductas ilícitas en el ejercicio de sus funciones. El gobierno rechaza caracterizaciones de "narcogobierno" como narrativas de presión política extranjera o ataques de la oposición.</p>
+    </div>
+
+    <h3>La posición de la oposición</h3>
+    <div class="response-box">
+      <div class="response-label">PAN, PRI y oposición — Posición política</div>
+      <p>El PAN, a través de su presidente nacional Jorge Romero, ha calificado a Morena de "narcopartido" y ha llamado a Sheinbaum a "romper el pacto criminal". El PRI presentó denuncias ante la FGR contra múltiples figuras de la 4T, incluyendo al expresidente López Obrador, en julio de 2025. La oposición señala que ya no se trata de casos aislados sino de un "patrón sistemático de infiltración criminal". <em>Nota: estas declaraciones provienen de actores con intereses políticos directos en la narrativa.</em></p>
+    </div>
+
+    <h3>La perspectiva académica y periodística</h3>
+    <div class="response-box">
+      <div class="response-label">Análisis independiente</div>
+      <p>Especialistas en seguridad y periodistas de investigación como el poeta y activista Javier Sicilia han señalado que el problema de colusión política-crimen organizado no es exclusivo de Morena: "PRI, PAN y Morena han perpetuado un Estado criminal". Sin embargo, la escala y penetración documentada en el partido actualmente gobernante —que controla 23 estados y el gobierno federal— hace que el fenómeno tenga una dimensión cualitativamente mayor. Investigadores advierten sobre la diferencia entre infiltración pasiva (donde el crimen organizado busca influir en políticos) e infiltración activa (donde los propios políticos buscan aliarse con el crimen).</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2>El Mecanismo: ¿Cómo Opera la Narcopolítica?</h2>
+
+    <p class="body-text">Más allá de los casos individuales, investigadores y documentos judiciales apuntan a mecanismos recurrentes de vinculación entre política y crimen organizado en México:</p>
+
+    <div class="case-card" style="border-left-color: #5a3a00;">
+      <div class="case-body">
+        <strong>1. Financiamiento de campañas:</strong> Los cárteles aportan recursos económicos a campañas políticas a cambio de protección futura o designación de funcionarios favorables.<br><br>
+        <strong>2. Movilización electoral:</strong> Grupos criminales condicionan o movilizan el voto en territorios bajo su control, particularmente en zonas serranas o de alta influencia criminal.<br><br>
+        <strong>3. Designaciones estratégicas:</strong> Los gobernadores o alcaldes acuerdan nombrar en posiciones clave (seguridad pública, ministerio público, aduanas) a personas de confianza del crimen organizado o susceptibles de ser cooptadas.<br><br>
+        <strong>4. Huachicol fiscal y lavado:</strong> Redes de tráfico ilegal de combustibles (huachicol) son utilizadas como vehículo para lavar dinero del narcotráfico y financiar estructuras políticas.<br><br>
+        <strong>5. Intimidación a competidores:</strong> Rivales políticos son presionados, amenazados o eliminados físicamente para garantizar resultados electorales favorables al candidato aliado del crimen.
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCLUSIONES -->
+  <div class="section-rule"><span>Evaluación Editorial</span></div>
+
+  <div class="article">
+    <div class="conclusion-box">
+      <h3>Consideraciones Finales</h3>
+      <p class="body-text">El presente análisis revela un cuadro preocupante de señalamientos documentados, investigaciones formales y acusaciones judiciales que afectan a figuras relevantes del partido gobernante en México. Sin embargo, es fundamental distinguir entre distintos niveles de evidencia:</p>
+
+      <p class="body-text"><strong>Acusaciones formales del DOJ (EUA):</strong> Rubén Rocha Moya y el senador Enrique Inzunza Cázarez han sido objeto de un gran jurado federal. Esto no equivale a una condena, pero sí implica que fiscales federales estadounidenses consideraron que la evidencia es suficiente para sostener un proceso judicial.</p>
+
+      <p class="body-text"><strong>Señalamientos de inteligencia:</strong> Gobernadores como Marina del Pilar, Américo Villarreal y Alfonso Durazo figuran en reportes de agencias de inteligencia y han sido mencionados en reuniones bilaterales. No existen cargos formales contra ellos.</p>
+
+      <p class="body-text"><strong>Investigaciones periodísticas:</strong> Casos como el de Adán Augusto López se nutren principalmente de documentos filtrados, investigaciones de medios independientes y declaraciones de fuentes no siempre identificadas. Requieren corroboración formal.</p>
+
+      <p class="body-text">La principal pregunta política es si el gobierno de Claudia Sheinbaum tiene la voluntad y la capacidad para investigar y, en su caso, procesar a figuras de su propio movimiento político antes de que lo haga la justicia extranjera. El escenario que se abre —con la DEA advirtiendo que vendrán más acusaciones— plantea un desafío de gobernabilidad sin precedente en la historia reciente de México.</p>
+    </div>
+
+    <div style="padding-bottom: 40px;">
+      <p class="body-text" style="font-style: italic; color: var(--light-mid); font-size: 13px;">
+        <span class="tag">Nota metodológica</span>
+        Este informe se basa en información de dominio público proveniente de medios de comunicación nacionales e internacionales, documentos judiciales públicos, declaraciones oficiales y análisis periodísticos. No constituye una investigación judicial ni pretende sustituir los procesos legales. Todos los señalados gozan de la presunción de inocencia conforme al derecho mexicano e internacional.
+      </p>
+    </div>
+  </div>
+
+  <!-- FUENTES -->
+  <div class="sources-section">
+    <h2>Fuentes Consultadas</h2>
+    <ul class="sources-list">
+      <li>Departamento de Justicia de EUA (DOJ) · Acusación formal Distrito Sur de Nueva York · 29 abril 2026</li>
+      <li>Democracy Now (en español) · Acusación contra Rocha Moya y funcionarios de Sinaloa · 30 abril 2026</li>
+      <li>Infobae México · Cronología de señalamientos contra Rocha Moya · 30 abril 2026</li>
+      <li>Vanguardia / AM · DEA advierte que acusación a Rocha es "solo el inicio" · 12 mayo 2026</li>
+      <li>Núcleo News · Funcionarios de Morena vinculados al crimen organizado · Abril 2026</li>
+      <li>Vanguardia · Tres gobernadores y dos líderes de Morena, siguientes: Riva Palacio · Mayo 2026</li>
+      <li>Politico.mx · ¿Morena y la 4T tienen vínculos con el narco? · Febrero 2025</li>
+      <li>Politico.mx · EUA prepara golpe a cúpula de Morena, van por Adán Augusto López · Mayo 2026</li>
+      <li>Proceso · Marina del Pilar se deslinda de vínculos con crimen organizado · Junio 2025</li>
+      <li>Diario Yucatán / El Financiero · Adán Augusto López y Marina del Pilar bajo investigación en EUA · Febrero 2026</li>
+      <li>El Universal · Morena se convirtió en "narco partido": Jorge Romero (PAN) · Mayo 2026</li>
+      <li>El Imparcial · Colectivo pide al INE cancelar registro de Morena · Mayo 2026</li>
+      <li>Infobae · Alito Moreno denuncia a AMLO y funcionarios de Morena ante FGR · Julio 2025</li>
+      <li>Documentos Sedena / Guacamaya Leaks · Reportes de inteligencia militar filtrados · 2022-2024</li>
+      <li>The New York Times · Vínculos de asesores de AMLO con narcotráfico · Febrero 2024</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <hr class="footer-rule">
+  <p>INFORME DE ANÁLISIS POLÍTICO · NARCOPOLÍTICA EN MÉXICO · MAYO 2026</p>
+  <p style="margin-top: 8px; color: #555;">Este documento fue elaborado con fines informativos y de análisis. Toda la información proviene de fuentes públicas verificables. Las opiniones incluidas corresponden a sus autores originales y no representan una posición editorial propia. La presunción de inocencia aplica a todos los señalados.</p>
+</div>
+
+</body>
+</html>
